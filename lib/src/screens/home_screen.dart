@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final pages = <Widget>[
       // Home page
-      Center(
+      const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -41,11 +41,19 @@ class _HomeScreenState extends State<HomeScreen> {
 
       // Reservation page
       const Center(
-          child: Text('Reservation Page', style: TextStyle(fontSize: 24))),
+        child: Text(
+          'Reservation Page',
+          style: TextStyle(fontSize: 24),
+        ),
+      ),
 
       // Settings page
       const Center(
-          child: Text('Settings Page', style: TextStyle(fontSize: 24))),
+        child: Text(
+          'Settings Page',
+          style: TextStyle(fontSize: 24),
+        ),
+      ),
     ];
 
     return Scaffold(
