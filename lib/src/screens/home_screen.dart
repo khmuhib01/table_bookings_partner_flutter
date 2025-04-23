@@ -119,14 +119,15 @@ class _HomeScreenState extends State<HomeScreen> {
               leading: const Icon(Icons.info),
               title: const Text('About'),
               onTap: () {
-                // handle about
+                // close drawer & navigate
+                Navigator.popAndPushNamed(context, AppRoutes.about);
               },
             ),
             ListTile(
               leading: const Icon(Icons.help),
               title: const Text('Help'),
               onTap: () {
-                // handle help
+                Navigator.popAndPushNamed(context, AppRoutes.help);
               },
             ),
             const Divider(),
