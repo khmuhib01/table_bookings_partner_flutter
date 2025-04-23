@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:table_bookings_partner_flutter/src/routes/app_routes.dart';
+import 'package:table_bookings_partner_flutter/src/screens/home_page.dart';
+import 'package:table_bookings_partner_flutter/src/screens/reservation_page.dart';
+import 'package:table_bookings_partner_flutter/src/screens/settings_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -25,35 +28,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final pages = <Widget>[
-      // Home page
-      const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-                onPressed: _increment, child: const Text('Increment')),
-            Text('$_counter', style: const TextStyle(fontSize: 48)),
-            ElevatedButton(
-                onPressed: _decrement, child: const Text('Decrement')),
-          ],
-        ),
-      ),
-
-      // Reservation page
-      const Center(
-        child: Text(
-          'Reservation Page',
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
-
-      // Settings page
-      const Center(
-        child: Text(
-          'Settings Page',
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
+      HomePage(increment: _increment, decrement: _decrement, counter: _counter),
+      const ReservationPage(),
+      const SettingsPage(),
     ];
 
     return Scaffold(
@@ -127,7 +104,6 @@ class _HomeScreenState extends State<HomeScreen> {
               leading: const Icon(Icons.info),
               title: const Text('About'),
               onTap: () {
-                // close drawer & navigate
                 Navigator.popAndPushNamed(context, AppRoutes.about);
               },
             ),
